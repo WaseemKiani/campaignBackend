@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Campaign{
+    id               Int @default(autoincrement()) @id
+    companyName      String
+    campaignName     String
+    startDate        String
+    endDate          String
+    expectedRevinue  Int
+    ActualCost       Int
+    numberSent       Int
+    type  	         String
+    budgetedCost     Int
+    expectedCost     Int
+    assignedBD       String
+    description      String
+    status           String
+    isDeleted	       Boolean @default(false)
+}
+
